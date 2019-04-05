@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,63 +7,83 @@
     android:background="@color/cG0"
     tools:context=".view.activity.DemoActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <ImageView
+        android:id="@+id/ivMenu"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_menu"
+        android:tint="@color/cUI1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/xpressive_regular"
+        android:text="Fotel Food"
+        android:textColor="@color/cUI1"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_search"
+        android:tint="@color/cUI1"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/ivOptions"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivOptions"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_menu_vert"
+        android:tint="@color/cUI1"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMenu" />
+
+    <Button
+        android:id="@+id/btSearch"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/v_fill"
+        android:drawableStart="@drawable/bm_search"
+        android:drawableLeft="@drawable/bm_search"
+        android:padding="10dp"
+        android:text="search"
+        android:textAllCaps="false"
+        android:textColor="@color/accentDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/ivMenu"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="32dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_menu"
-            android:tint="@color/cUI1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/fk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/xpressive_regular"
-            android:text="Fotel Food"
-            android:textColor="@color/cUI1"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ivSearch"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_search"
-            android:tint="@color/cUI1"
-            android:visibility="gone"
-            app:layout_constraintEnd_toStartOf="@+id/ivOptions"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ivOptions"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_menu_vert"
-            android:tint="@color/cUI1"
-            app:layout_constraintBottom_toBottomOf="@+id/ivMenu"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ivMenu" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cvBanner"
@@ -71,16 +91,16 @@
             android:layout_height="80dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:alpha="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivMenu">
+            app:layout_constraintTop_toBottomOf="@+id/btSearch">
 
             <ImageView
-                android:id="@+id/a"
+                android:id="@+id/ivBanner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
@@ -166,7 +186,7 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvFav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -175,7 +195,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:fontFamily="@font/xpressive_regular"
-            android:text="Favourites"
+            android:text="favourites"
             android:textColor="@color/cUI1"
             android:textSize="36sp"
             android:textStyle="bold"
@@ -184,37 +204,37 @@
             app:layout_constraintTop_toBottomOf="@+id/cvBanner" />
 
         <HorizontalScrollView
-            android:id="@+id/hlsv"
+            android:id="@+id/hsvFav"
             android:layout_width="match_parent"
             android:layout_height="188dp"
             android:scrollbarSize="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintTop_toBottomOf="@+id/tvFav">
 
             <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cardView"
+                    android:id="@+id/cvFav1"
                     android:layout_width="190dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:background="@drawable/ic_illustration_1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
 
                     <ImageView
-                        android:id="@+id/row_wallet_redeem_imqg"
+                        android:id="@+id/ivFav1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_chicken_rice" />
 
@@ -236,7 +256,7 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textViewq"
+                                android:id="@+id/tvFavName1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
@@ -255,7 +275,7 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cardView2"
+                    android:id="@+id/cvFav2"
                     android:layout_width="190dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
@@ -264,14 +284,15 @@
                     android:layout_marginBottom="8dp"
                     android:alpha="1"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintStart_toEndOf="@+id/cvFav1"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/row_wallet_redeem_img"
+                        android:id="@+id/ivFav2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_pilau" />
 
@@ -293,7 +314,7 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/textViewt"
+                                android:id="@+id/tvFavName2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
@@ -313,7 +334,7 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cardView3"
+                    android:id="@+id/cvFav3"
                     android:layout_width="190dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
@@ -323,11 +344,11 @@
                     android:alpha="1"
                     app:cardBackgroundColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/cardView2"
+                    app:layout_constraintStart_toEndOf="@+id/cvFav2"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cardView4"
+                    android:id="@+id/cvFav4"
                     android:layout_width="190dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
@@ -337,11 +358,11 @@
                     android:alpha="1"
                     app:cardBackgroundColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/cardView3"
+                    app:layout_constraintStart_toEndOf="@+id/cvFav3"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cardView5"
+                    android:id="@+id/cvFav5"
                     android:layout_width="190dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
@@ -351,7 +372,7 @@
                     android:alpha="1"
                     app:cardBackgroundColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/cardView4"
+                    app:layout_constraintStart_toEndOf="@+id/cvFav4"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
@@ -359,7 +380,7 @@
         </HorizontalScrollView>
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/tvBreakfast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -368,162 +389,570 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:fontFamily="@font/xpressive_regular"
-            android:text="Main meals"
+            android:text="breakfast"
             android:textColor="@color/cUI1"
             android:textSize="36sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hlsv" />
+            app:layout_constraintTop_toBottomOf="@+id/hsvFav" />
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cvmeal"
-            android:layout_width="0dp"
-            android:layout_height="180dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:alpha="1"
+        <HorizontalScrollView
+            android:id="@+id/hsvBreakfast"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scrollbarSize="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView23">
-
-            <ImageView
-                android:id="@+id/a1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_minji" />
+            app:layout_constraintTop_toBottomOf="@+id/tvBreakfast">
 
             <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:alpha="0.7"
-                    android:background="@color/black"
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvBreakfast1"
+                    android:layout_width="390dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textViewaq"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/xpressive_regular"
-                        android:text="Rice + Minji"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/ivsa"
-                        app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageView
-                        android:id="@+id/ivsa"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:src="@drawable/ic_delivery"
-                        android:tint="@color/cG5"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:id="@+id/ivBreakfast1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_chapati" />
 
-                    <TextView
-                        android:id="@+id/textView12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:fontFamily="@font/xpressive_regular"
-                        android:text="Free"
-                        android:textColor="@color/cG5"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/ivsa"
-                        app:layout_constraintStart_toEndOf="@+id/ivsa"
-                        app:layout_constraintTop_toTopOf="@+id/ivsa" />
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/ivsaq"-->
-                        <!--android:layout_width="20dp"-->
-                        <!--android:layout_height="20dp"-->
-                        <!--android:layout_marginStart="152dp"-->
-                        <!--android:layout_marginLeft="152dp"-->
-                        <!--android:layout_marginBottom="8dp"-->
-                        <!--android:src="@drawable/ic_time"-->
-                        <!--android:tint="@color/cG5"-->
-                        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-                        <!--app:layout_constraintStart_toStartOf="parent" />-->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
 
-                    <!--<TextView-->
-                        <!--android:id="@+id/textView12q"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginStart="8dp"-->
-                        <!--android:layout_marginLeft="8dp"-->
-                        <!--android:fontFamily="@font/xpressive_regular"-->
-                        <!--android:text="40 min"-->
-                        <!--android:textColor="@color/cG5"-->
-                        <!--android:textSize="16sp"-->
-                        <!--android:textStyle="bold"-->
-                        <!--app:layout_constraintBottom_toBottomOf="@+id/ivsaq"-->
-                        <!--app:layout_constraintStart_toEndOf="@+id/ivsaq"-->
-                        <!--app:layout_constraintTop_toTopOf="@+id/ivsaq" />-->
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                    <TextView
-                    android:id="@+id/textView12qa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="152dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="152dp"
-                    android:fontFamily="@font/xpressive_regular"
-                    android:text="KES 250"
-                    android:textColor="@color/cG5"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                            <TextView
+                                android:id="@+id/tvChapatiName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Chapati"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/ivDeliveryChapati1"
+                                app:layout_constraintStart_toStartOf="parent" />
 
-                <Button
-                    android:id="@+id/btaddm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginRight="4dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/v_fill"
-                    android:drawableEnd="@drawable/bm_add"
-                    android:drawableRight="@drawable/bm_add"
-                    android:gravity="center"
-                    android:text="ADD"
-                    android:padding="10dp"
-                    android:textAllCaps="false"
-                    android:textColor="@color/accentDark"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.733" />
+                            <ImageView
+                                android:id="@+id/ivDeliveryChapati1"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:src="@drawable/ic_delivery"
+                                android:tint="@color/cG5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvDeliveryChapati1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Free"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivDeliveryChapati1"
+                                app:layout_constraintStart_toEndOf="@+id/ivDeliveryChapati1"
+                                app:layout_constraintTop_toTopOf="@+id/ivDeliveryChapati1" />
+
+                            <TextView
+                                android:id="@+id/tvPriceChapati1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="152dp"
+                                android:layout_marginLeft="152dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="KES 50"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <Button
+                                android:id="@+id/btAddMainMeal1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/v_fill"
+                                android:drawableEnd="@drawable/bm_add"
+                                android:drawableRight="@drawable/bm_add"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="ADD"
+                                android:textAllCaps="false"
+                                android:textColor="@color/accentDark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.733" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
             </android.support.constraint.ConstraintLayout>
 
-        </android.support.constraint.ConstraintLayout>
+        </HorizontalScrollView>
 
-    </android.support.v7.widget.CardView>
+        <TextView
+            android:id="@+id/tvMainMeal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:fontFamily="@font/xpressive_regular"
+            android:text="main meals"
+            android:textColor="@color/cUI1"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hsvBreakfast" />
+
+        <HorizontalScrollView
+            android:id="@+id/hsvMainMeal"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scrollbarSize="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMainMeal">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvMeal1"
+                    android:layout_width="395dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivMainMeal1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_minji" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tvMainMealName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Rice + Minji"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/ivDeliveryMainMeal1"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/ivDeliveryMainMeal1"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:src="@drawable/ic_delivery"
+                                android:tint="@color/cG5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvDeliveryMainMeal1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Free"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivDeliveryMainMeal1"
+                                app:layout_constraintStart_toEndOf="@+id/ivDeliveryMainMeal1"
+                                app:layout_constraintTop_toTopOf="@+id/ivDeliveryMainMeal1" />
+
+                            <TextView
+                                android:id="@+id/tvPriceMainMeal1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="152dp"
+                                android:layout_marginLeft="152dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="KES 250"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <Button
+                                android:id="@+id/btAddMainMeal1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/v_fill"
+                                android:drawableEnd="@drawable/bm_add"
+                                android:drawableRight="@drawable/bm_add"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="ADD"
+                                android:textAllCaps="false"
+                                android:textColor="@color/accentDark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.733" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvMeal2"
+                    android:layout_width="395dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cvMeal1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivMainMeal2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_ugali_fish" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tvMainMealName2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Ugali + Fish + Greens"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/ivDeliveryMainMeal2"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/ivDeliveryMainMeal2"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:src="@drawable/ic_delivery"
+                                android:tint="@color/cG5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvDeliveryMainMeal2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Free"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivDeliveryMainMeal2"
+                                app:layout_constraintStart_toEndOf="@+id/ivDeliveryMainMeal2"
+                                app:layout_constraintTop_toTopOf="@+id/ivDeliveryMainMeal2" />
+
+                            <TextView
+                                android:id="@+id/tvPriceMainMeal2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="152dp"
+                                android:layout_marginLeft="152dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="KES 400"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <Button
+                                android:id="@+id/btAddMainMeal2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/v_fill"
+                                android:drawableEnd="@drawable/bm_add"
+                                android:drawableRight="@drawable/bm_add"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="ADD"
+                                android:textAllCaps="false"
+                                android:textColor="@color/accentDark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.733" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvMeal3"
+                    android:layout_width="395dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cvMeal2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivMainMeal3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_rice_beef" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:alpha="0.7"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tvMainMealName3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Rice + Beef"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/ivDeliveryMainMeal3"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/ivDeliveryMainMeal3"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:src="@drawable/ic_delivery"
+                                android:tint="@color/cG5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvDeliveryMainMeal3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="Free"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/ivDeliveryMainMeal3"
+                                app:layout_constraintStart_toEndOf="@+id/ivDeliveryMainMeal3"
+                                app:layout_constraintTop_toTopOf="@+id/ivDeliveryMainMeal3" />
+
+                            <TextView
+                                android:id="@+id/tvPriceMainMeal3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="152dp"
+                                android:layout_marginLeft="152dp"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/xpressive_regular"
+                                android:text="KES 300"
+                                android:textColor="@color/cG5"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <Button
+                                android:id="@+id/btAddMainMeal3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/v_fill"
+                                android:drawableEnd="@drawable/bm_add"
+                                android:drawableRight="@drawable/bm_add"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text="ADD"
+                                android:textAllCaps="false"
+                                android:textColor="@color/accentDark"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.733" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tvBev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:fontFamily="@font/xpressive_regular"
+            android:text="beverages &amp; drinks"
+            android:textColor="@color/cUI1"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hsvMainMeal" />
+
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.constraint.ConstraintLayout>
-
-</android.support.v4.widget.NestedScrollView>
